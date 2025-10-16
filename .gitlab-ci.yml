@@ -6,8 +6,18 @@ grafana-monitoring-vm-1:
   trigger:
     include:
       - local: deployments/monitoring-vm-1/.gitlab-ci.yml
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+      changes:
+        - 'deployments/monitoring-vma-1/**/*'
+    - when: manual
 
 grafana-dev-2-vm-1:
   trigger:
     include:
       - local: deployments/dev-2-vm-1/.gitlab-ci.yml
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+      changes:
+        - 'deployments/dev-2-vma-1/**/*'
+    - when: manual

@@ -1,6 +1,5 @@
 stages:
   - test
-  - deploy-trigger
   - deploy
 
 include:
@@ -15,11 +14,3 @@ include:
       remote_host: "monitoring-vm.margusm.dev"
       remote_user: "margus"
       remote_path: "deployments/grafana-monitoring-vm-1"
-
-deploy-trigger:
-  stage: deploy-trigger
-  rules:
-    - if: '$CI_COMMIT_REF_NAME == "main"'
-      changes:
-        - 'deployments/monitoring-vma-1/**/*'
-    - when: manual
