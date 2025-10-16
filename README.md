@@ -14,12 +14,8 @@ Grafana is an open-source analytics and monitoring platform that enables users t
 | Deployment               | Location           | Tags            | Status     | Url                                                              |
 | ------------------------ | ------------------ | --------------- | ---------- | ---------------------------------------------------------------- |
 | grafana-monitoring-vm-1 | monitoring-vm | ![icon](.attachments/d.png) | **active** | https://grafana.margusm.dev/<br>http://192.168.40.110:3000<br> |
+| grafana-dev-2-vm-1 | dev-2-vm | ![icon](.attachments/d.png) | **active** | https://grafana2.margusm.dev/<br>http://192.168.40.112:3000<br> |
 
 # References
 - ![icon](.attachments/github-icon.png)  [Github mirror](https://github.com/margusmuru/homelab-grafana)
 - ![icon](.attachments/url-icon.png)  https://grafana.com/grafana/dashboards/
-
-# Setup
-## Default login
-user
-
