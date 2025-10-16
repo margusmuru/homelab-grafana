@@ -14,3 +14,4 @@ include:
       remote_host: "dev-2-vm.margusm.dev"
       remote_user: "margus"
       remote_path: "deployments/grafana-dev-2-vm-1"
+      
