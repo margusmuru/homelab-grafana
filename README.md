@@ -19,4 +19,7 @@ Grafana is an open-source analytics and monitoring platform that enables users t
 - ![icon](.attachments/github-icon.png)  [Github mirror](https://github.com/margusmuru/homelab-grafana)
 - ![icon](.attachments/url-icon.png)  https://grafana.com/grafana/dashboards/
 
+# Setup
+## Default login
+user
 

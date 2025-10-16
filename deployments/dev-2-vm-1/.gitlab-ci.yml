@@ -1,0 +1,16 @@
+stages:
+  - test
+  - deploy
+
+include:
+  - component: $CI_SERVER_FQDN/components/docker/config-docker@~latest
+    inputs:
+      as: "docker-lint"
+      local_path: "deployments/dev-2-vm-1"
+  - component: $CI_SERVER_FQDN/components/docker/deploy@~latest
+    inputs:
+      as: "dev-2-vm-1-deploy"
+      local_path: "deployments/dev-2-vma-1"
+      remote_host: "dev-2-vm.margusm.dev"
+      remote_user: "margus"
+      remote_path: "deployments/grafana-dev-2-vm-1"

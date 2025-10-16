@@ -1,0 +1,22 @@
+---
+services:
+  grafana:
+    image: docker.io/grafana/grafana-oss:12.1.1
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
+    networks:
+      - grafana
+
+networks:
+  grafana:
+    name: grafana
+    driver: bridge
+    attachable: true
+    
+volumes:
+  grafana-data:
+    driver: local
