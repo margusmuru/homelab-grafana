@@ -1,0 +1,16 @@
+stages:
+  - test
+  - deploy
+
+include:
+  - component: $CI_SERVER_FQDN/components/docker/config-docker@~latest
+    inputs:
+      as: "docker-lint"
+      local_path: "deployments/monitoring-vm-1"
+  - component: $CI_SERVER_FQDN/components/docker/deploy@~latest
+    inputs:
+      as: "monitoring-vm-1-deploy"
+      local_path: "deployments/monitoring-vma-1"
+      remote_host: "monitoring-vm.margusm.dev"
+      remote_user: "margus"
+      remote_path: "deployments/grafana-monitoring-vm-1"
