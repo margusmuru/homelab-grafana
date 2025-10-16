@@ -1,5 +1,6 @@
 stages:
   - test
+  - deploy-trigger
   - deploy
 
 include:
@@ -7,7 +8,7 @@ include:
     inputs:
       as: "docker-lint"
       local_path: "deployments/dev-2-vm-1"
-  - component: $CI_SERVER_FQDN/components/docker/deploy@~latest
+  - component: $CI_SERVER_FQDN/components/docker/deploy-nr@~latest
     inputs:
       as: "dev-2-vm-1-deploy"
       local_path: "deployments/dev-2-vma-1"
@@ -15,4 +16,10 @@ include:
       remote_user: "margus"
       remote_path: "deployments/grafana-dev-2-vm-1"
 
-      
+deploy-trigger:
+  stage: deploy-trigger
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+      changes:
+        - 'deployments/grafana-dev-2-vm-1/**/*'
+    - when: manual
