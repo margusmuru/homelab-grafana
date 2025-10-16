@@ -6,6 +6,7 @@ grafana-monitoring-vm-1:
   trigger:
     include:
       - local: deployments/monitoring-vm-1/.gitlab-ci.yml
+    strategy: mirror
   rules:
     - if: '$CI_COMMIT_REF_NAME == "main"'
       changes:
@@ -16,6 +17,7 @@ grafana-dev-2-vm-1:
   trigger:
     include:
       - local: deployments/dev-2-vm-1/.gitlab-ci.yml
+    strategy: mirror
   rules:
     - if: '$CI_COMMIT_REF_NAME == "main"'
       changes:
